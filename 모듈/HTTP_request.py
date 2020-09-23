@@ -46,8 +46,16 @@ print(res3.text)
 
 
 
-
-
-
-
-
+###########################################################################################################
+#response json 파싱
+"""
+    나오는 응답 
+    {'success': True, 'message': '', 'result': {'Bid': 4025.00092321, 'Ask': 4026.60175655, 'Last': 4024.00915298}}
+    Bid : 살 때,
+    Ask : 팔 때,
+    Last : 최근 거래 가격
+"""
+url = "https://bittrex.com/api/v1.1/public/getticker?market=USDT-BTC"
+response=requests.get(url)
+data=response.json()
+print(data['result']['Last'])
