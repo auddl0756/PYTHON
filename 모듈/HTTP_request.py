@@ -41,8 +41,8 @@ res=requests.get(url,headers=headers)
 ###########################################################################################################
 url="http://www.naver.com"
 res3=requests.get(url)
-print("******************enter naver******************")
-print(res3.text)
+# print("******************enter naver******************")
+# print(res3.text)
 
 
 
@@ -57,5 +57,15 @@ print(res3.text)
 """
 url = "https://bittrex.com/api/v1.1/public/getticker?market=USDT-BTC"
 response=requests.get(url)
+
+#방법1
 data=response.json()
+
+#방법2 
+# tmp=json.dumps(response.json())
+# data=json.loads(tmp)
+print(data)
 print(data['result']['Last'])
+
+
+###########################################################################################################
