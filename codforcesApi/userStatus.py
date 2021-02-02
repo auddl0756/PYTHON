@@ -66,8 +66,13 @@ def rating(s):
 solved.sort(key=rating)
 solved_per_rating={}
 solved_per_language={}
+solved_problem={}
+count=0
+
 for s in solved:
-    print(s)
+    if solved_problem.get(s[1]) is not None:
+        continue
+    count+=1
     if solved_per_rating.get(s[2]) is None:
         solved_per_rating[s[2]]=1
     else:
@@ -78,5 +83,6 @@ for s in solved:
     else:
         solved_per_language[s[3]]+=1
 
+print("solved problem count : ",count)
 print(solved_per_rating)
 print(solved_per_language)
